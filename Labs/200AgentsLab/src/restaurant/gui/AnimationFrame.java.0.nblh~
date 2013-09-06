@@ -1,0 +1,74 @@
+package restaurant.gui;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.LinkedList;
+
+public class AnimationFrame extends JFrame {
+
+    private final int WINDOWX = 450;
+    private final int WINDOWY = 350;
+
+    private LinkedList<Gui> guis = new LinkedList<Gui>();
+
+    public AnimationFrame() {
+
+        super("Agent Animation Practice");
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(40 + WINDOWX, 50 +  WINDOWY, WINDOWX, WINDOWY);
+        setVisible(true);
+
+        getContentPane().setLayout(new BoxLayout((Container) getContentPane(), BoxLayout.Y_AXIS));
+
+        Timer timer = new Timer(20, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                repaint();
+            }
+        });
+        timer.start();
+    }
+
+    public void paint(Graphics g) {
+
+        Graphics2D graphicsBuffer;
+        Image bufferImage;
+        Dimension bufferSize = this.getSize();
+
+        bufferImage = createImage(bufferSize.width, bufferSize.height);
+        graphicsBuffer = (Graphics2D) bufferImage.getGraphics();
+
+        graphicsBuffer.setColor(getBackground());
+        graphicsBuffer.fillRect(0, 0, bufferSize.width, bufferSize.height);
+        graphicsBuffer.setColor(getForeground());
+
+        graphicsBuffer.setColor(Color.ORANGE);
+        graphicsBuffer.fillRect(200, 250, 50, 50);
+
+
+        for(Gui gui : guis) {
+            if (gui.isPresent()) {
+                gui.updatePosition();
+            }
+        }
+
+        for(Gui gui : guis) {
+            if (gui.isPresent()) {
+                gui.draw(graphicsBuffer);
+            }
+        }
+
+        g.drawImage(bufferImage, 0, 0, this);
+
+    }
+
+    public void addGui(CustomerGui gui) {
+        guis.add(gui);
+    }
+
+    public void addGui(MaitreDGui gui) {
+        guis.add(gui);
+    }
+}

@@ -1,0 +1,9 @@
+Player:         http://www.isequal.com/b-2_bomber/b-2_bomber_tomahawk_cruise_missile1.jpg
+Obstacle:	http://www.thebrickinc.com/brick_wallpaper_new.jpg
+Missile:	http://rlv.zcache.com/upright_metal_missile_sticker-p217077260076311529z85xz_400.jpg
+Sentry:		http://www.flickr.com/photos/softwaretestingclub/4790257642/lightbox/
+Lightning:	http://www.flickr.com/photos/splat/4014609946/sizes/t/in/photostream/
+Life:		http://www.flickr.com/photos/sn1cks/3631728569/sizes/m/in/photostream/
+Astronaut:      http://www.hasslefreeclipart.com/cart_people/images/astronaut.gif
+Black Hole:     http://www.flickr.com/photos/meredith415/3887643355/sizes/m/in/photostream/
+Technology:     http://www.arthursclipart.org/sciencetechnology/spark%20plug.gif
